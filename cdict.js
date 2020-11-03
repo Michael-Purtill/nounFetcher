@@ -27,7 +27,7 @@ var myData = data.split(",");
 var ret = [];
 
 
-for (var i = 0; i < myData.length; i++) {
+for (var i = 0; i < 10; i++) {
 	try {
 	myRes = request('GET', myData[i]);
 	var body = myRes.getBody().toString('utf8');
@@ -36,6 +36,12 @@ for (var i = 0; i < myData.length; i++) {
 	var decTable = $(czechHTML).find(".inflection-table");
 	var wordType = undefined;
 	var wordGender = ""
+	
+	var fu = myData[i].split("/");
+	
+	var word = decodeURIComponent(fu[fu.length - 1].split("#")[0]);
+	
+	console.log(word);
 	
 	if (czechHTML.find("[id*='" + "Noun" + "']").val() != undefined) {
 			wordType = "Noun";
@@ -49,7 +55,7 @@ for (var i = 0; i < myData.length; i++) {
 
 	var wordMeaningHTML = czechHTML.find(".headword").parent().next();
 	
-	var word = czechHTML.find(".headword")[0].innerText;
+	// word = czechHTML.find(".headword")[0].innerText;
 	
 	for (var j = 0; j < wordMeaningHTML.length; j++) {
 		var meaningChildren = wordMeaningHTML[j].children;
@@ -64,9 +70,9 @@ for (var i = 0; i < myData.length; i++) {
 	
 	// console.log(wordType);
 	
-	var decObject = {word: word,singular: {}, plural: {}, wordtype: wordType, gender: wordGender, wordmeaning: meanings};
+	var decObject = {word: word, singular: {}, plural: {}, wordtype: wordType, gender: wordGender, wordmeaning: meanings};
 
-	for (var j = 1; j < decRows.length && wordType == "Noun"; j++) {
+	for (var j = 1; j < decRows.length; j++) {
 		
 		// console.log(decRows[i].children[0]);
 		decObject.singular[decRows[j].children[0].textContent.split("\n")[0]] = decRows[j].children[1].textContent.split("\n")[0];
