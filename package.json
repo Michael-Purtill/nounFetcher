@@ -1,0 +1,22 @@
+{
+  "name": "cdict",
+  "version": "1.0.0",
+  "description": "grab czech noun info",
+  "main": "cdict.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "cdict"
+  },
+  "author": "caterpillar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "sync-request": "^6.1.0"
+  }
+}
