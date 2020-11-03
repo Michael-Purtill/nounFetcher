@@ -27,7 +27,7 @@ var myData = data.split(",");
 var ret = [];
 
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < myData.length; i++) {
 	try {
 	myRes = request('GET', myData[i]);
 	var body = myRes.getBody().toString('utf8');
