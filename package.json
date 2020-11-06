@@ -15,8 +15,10 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "html-table-to-json": "^1.0.0",
     "jquery": "^3.5.1",
     "jsdom": "^16.4.0",
-    "sync-request": "^6.1.0"
+    "sync-request": "^6.1.0",
+    "tabletojson": "^2.0.4"
   }
 }
