@@ -188,4 +188,4 @@ for (var i = 0; i < myData.length; i++) {
 
 // console.log(ret);
 
-fs.writeFileSync("adjs.json", JSON.stringify(ret), 'utf8');
+fs.writeFileSync("verbs.json", JSON.stringify(ret), 'utf8');
