@@ -72,25 +72,25 @@ for (var i = 0; i < myData.length; i++) {
 	
 	var tab1Rows = $(tab1).find("tr");
 	
-	for (var i = 0; i < tab1Rows.length; i++) {
-		if (i >= 2) {
-			var cells = $(tab1Rows[i]).find("td");
+	for (var j = 0; j < tab1Rows.length; j++) {
+		if (j >= 2) {
+			var cells = $(tab1Rows[j]).find("td");
 			
-			if (i == 2) {
+			if (j == 2) {
 				presentForms.firstIndicativeSingular = $(cells[1]).text();
 				presentForms.firstIndicativePlural = $(cells[2]).text();
 				presentForms.firstImperativeSingular = $(cells[3]).text();
 				presentForms.firstImperativePlural = $(cells[4]).text();
 			}
 			
-			if (i == 3) {
+			if (j == 3) {
 				presentForms.secondIndicativeSingular = $(cells[1]).text();
 				presentForms.secondIndicativePlural = $(cells[2]).text();
 				presentForms.secondImperativeSingular = $(cells[3]).text();
 				presentForms.secondImperativePlural = $(cells[4]).text();
 			}
 			
-			if (i == 4) {
+			if (j == 4) {
 				presentForms.thirdIndicativeSingular = $(cells[1]).text();
 				presentForms.thirdIndicativePlural = $(cells[2]).text();
 				presentForms.thirdImperativeSingular = $(cells[3]).text();
@@ -106,11 +106,11 @@ for (var i = 0; i < myData.length; i++) {
 	
 	var tab2Rows = $(tab2).find("tr");
 	
-	for (var i = 0; i < tab2Rows.length; i++) {
-		if (i >= 2) {
-			var cells = $(tab2Rows[i]).find("td");
+	for (var j = 0; j < tab2Rows.length; j++) {
+		if (j >= 2) {
+			var cells = $(tab2Rows[j]).find("td");
 			
-			if (i == 2) {
+			if (j == 2) {
 				participles.masculineAnimatePastSingularParticiple = $(cells[1]).text();
 				participles.masculineAnimatePastPluralParticiple = $(cells[2]).text();
 				participles.masculineAnimatePassiveSingularParticiple = $(cells[3]).text();
@@ -122,19 +122,19 @@ for (var i = 0; i < myData.length; i++) {
 				participles.masculineInanimatePassiveSingularParticiple = $(cells[3]).text();
 			}
 			
-			if (i == 3) {
+			if (j == 3) {
 				participles.masculineAnimatePastPluralParticiple = $(cells[1]).text();
 				participles.masculineAnimatePassivePluralParticiple = $(cells[2]).text();
 			}
 			
-			if (i == 4) {
+			if (j == 4) {
 				participles.femininePastSingularParticiple = $(cells[1]).text();
 				participles.femininePastPluralParticiple = $(cells[2]).text();
 				participles.femininePassiveSingularParticiple = $(cells[3]).text();
 				participles.femininePassivePluralParticiple = $(cells[4]).text();
 			}
 			
-			if (i == 5) {
+			if (j == 5) {
 				participles.neuterPastSingularParticiple = $(cells[1]).text();
 				participles.neuterPastPluralParticiple = $(cells[2]).text();
 				participles.neuterPassiveSingularParticiple = $(cells[3]).text();
@@ -150,23 +150,23 @@ for (var i = 0; i < myData.length; i++) {
 							
 	var tab3Rows = $(tab3).find("tr");
 	
-	for (var i = 0; i < tab3Rows.length; i++) {
-		if (i >= 1) {
-			var cells = $(tab3Rows[i]).find("td");
+	for (var j = 0; j < tab3Rows.length; j++) {
+		if (j >= 1) {
+			var cells = $(tab3Rows[j]).find("td");
 			
-			if (i == 1) {
+			if (j == 1) {
 				transgressives.masculineSingularPresentTransgressive = $(cells[1]).text();
 				transgressives.masculineSingularPastTransgressive = $(cells[2]).text();
 			}
 			
-			if (i == 2) {
+			if (j == 2) {
 				transgressives.feminineSingularPresentTransgressive = $(cells[1]).text();
 				transgressives.feminineSingularPastTransgressive = $(cells[2]).text();
 				transgressives.neuterSingularPresentTransgressive = $(cells[1]).text();
 				transgressives.neuterSingularPastTransgressive = $(cells[2]).text();
 			}
 			
-			if (i == 3) {
+			if (j == 3) {
 				transgressives.pluralPresentTransgressive = $(cells[1]).text();
 				transgressives.pluralPastTransgressive = $(cells[2]).text();
 			}
@@ -184,7 +184,7 @@ for (var i = 0; i < myData.length; i++) {
 	
 	ret.push(verbObject);
 	
-	console.log(verbObject);
+	// console.log(verbObject);
 	
 	} catch(e) {
 		console.log(e);
