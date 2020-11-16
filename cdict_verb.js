@@ -26,7 +26,7 @@ var myData = data.split(",");
 
 var ret = [];
 
-myData = ["https://en.wiktionary.org/wiki/b%C4%9B%C5%BEet"];
+// myData = ["https://en.wiktionary.org/wiki/b%C4%9B%C5%BEet"];
 
 
 for (var i = 0; i < myData.length; i++) {
@@ -36,7 +36,6 @@ for (var i = 0; i < myData.length; i++) {
 	var myHtml = $(body).find("#Czech");
 	var czechHTML = myHtml.parent().nextUntil("h2");
 	var wordType = undefined;
-	var wordGender = ""
 	
 	var fu = myData[i].split("/");
 	
@@ -78,24 +77,24 @@ for (var i = 0; i < myData.length; i++) {
 			var cells = $(tab1Rows[i]).find("td");
 			
 			if (i == 2) {
-				presentForms.firstIndicativeSingular = cells[1].innerText;
-				presentForms.firstIndicativePlural = cells[2].innerText;
-				presentForms.firstImperativeSingular = cells[3].innerText;
-				presentForms.firstImperativePlural = cells[4].innerText;
+				presentForms.firstIndicativeSingular = $(cells[1]).text();
+				presentForms.firstIndicativePlural = $(cells[2]).text();
+				presentForms.firstImperativeSingular = $(cells[3]).text();
+				presentForms.firstImperativePlural = $(cells[4]).text();
 			}
 			
 			if (i == 3) {
-				presentForms.secondIndicativeSingular = cells[1].innerText;
-				presentForms.secondIndicativePlural = cells[2].innerText;
-				presentForms.secondImperativeSingular = cells[3].innerText;
-				presentForms.secondImperativePlural = cells[4].innerText;
+				presentForms.secondIndicativeSingular = $(cells[1]).text();
+				presentForms.secondIndicativePlural = $(cells[2]).text();
+				presentForms.secondImperativeSingular = $(cells[3]).text();
+				presentForms.secondImperativePlural = $(cells[4]).text();
 			}
 			
 			if (i == 4) {
-				presentForms.thirdIndicativeSingular = cells[1].innerText;
-				presentForms.thirdIndicativePlural = cells[2].innerText;
-				presentForms.thirdImperativeSingular = cells[3].innerText;
-				presentForms.thirdImperativePlural = cells[4].innerText;
+				presentForms.thirdIndicativeSingular = $(cells[1]).text();
+				presentForms.thirdIndicativePlural = $(cells[2]).text();
+				presentForms.thirdImperativeSingular = $(cells[3]).text();
+				presentForms.thirdImperativePlural = $(cells[4]).text();
 			}
 		}
 	}
@@ -105,41 +104,41 @@ for (var i = 0; i < myData.length; i++) {
 					femininePastSingularParticiple: "", femininePastPluralParticiple: "", femininePassiveSingularParticiple: "", femininePassivePluralParticiple: "",
 					neuterPastSingularParticiple: "", neuterPastPluralParticiple: "", neuterPassiveSingularParticiple: "", neuterPassivePluralParticiple: ""};
 	
-	var tab2Rows = (tab2).find("tr");
+	var tab2Rows = $(tab2).find("tr");
 	
 	for (var i = 0; i < tab2Rows.length; i++) {
 		if (i >= 2) {
 			var cells = $(tab2Rows[i]).find("td");
 			
 			if (i == 2) {
-				participles.masculineAnimatePastSingularParticiple = cells[1].innerText;
-				participles.masculineAnimatePastPluralParticiple = cells[2].innerText;
-				participles.masculineAnimatePassiveSingularParticiple = cells[3].innerText;
-				participles.masculineAnimatePassivePluralParticiple = cells[4].innerText;
+				participles.masculineAnimatePastSingularParticiple = $(cells[1]).text();
+				participles.masculineAnimatePastPluralParticiple = $(cells[2]).text();
+				participles.masculineAnimatePassiveSingularParticiple = $(cells[3]).text();
+				participles.masculineAnimatePassivePluralParticiple = $(cells[4]).text();
 				
 				//masculine inanimate past singular and passive singular are usually the same as the masculine animate ones:
 				
-				participles.masculineInanimatePastSingularParticiple = cells[1];
-				participles.masculineInanimatePassiveSingularParticiple = cells[3];
+				participles.masculineInanimatePastSingularParticiple = $(cells[1]).text();
+				participles.masculineInanimatePassiveSingularParticiple = $(cells[3]).text();
 			}
 			
 			if (i == 3) {
-				participles.masculineAnimatePastPluralParticiple = cells[1].innerText;
-				participles.masculineAnimatePassivePluralParticiple = cells[2].innerText;
+				participles.masculineAnimatePastPluralParticiple = $(cells[1]).text();
+				participles.masculineAnimatePassivePluralParticiple = $(cells[2]).text();
 			}
 			
 			if (i == 4) {
-				participles.femininePastSingularParticiple = cells[1].innerText;
-				participles.femininePastPluralParticiple = cells[2].innerText;
-				participles.femininePassiveSingularParticiple = cells[3].innerText;
-				participles.femininePassivePluralParticiple = cells[4].innerText;
+				participles.femininePastSingularParticiple = $(cells[1]).text();
+				participles.femininePastPluralParticiple = $(cells[2]).text();
+				participles.femininePassiveSingularParticiple = $(cells[3]).text();
+				participles.femininePassivePluralParticiple = $(cells[4]).text();
 			}
 			
 			if (i == 5) {
-				participles.neuterPastSingularParticiple = cells[1].innerText;
-				participles.neuterPastPluralParticiple = cells[2].innerText;
-				participles.neuterPassiveSingularParticiple = cells[3].innerText;
-				participles.neuterPassivePluralParticiple = cells[4].innerText;
+				participles.neuterPastSingularParticiple = $(cells[1]).text();
+				participles.neuterPastPluralParticiple = $(cells[2]).text();
+				participles.neuterPassiveSingularParticiple = $(cells[3]).text();
+				participles.neuterPassivePluralParticiple = $(cells[4]).text();
 			}
 		}
 	}
@@ -149,31 +148,35 @@ for (var i = 0; i < myData.length; i++) {
 							neuterSingularPresentTransgressive: "", neuterSingularPastTransgressive: "",
 							pluralPresentTransgressive: "", pluralPastTransgressive: ""};
 							
-	var tab3Rows = (tab3).find("tr");
+	var tab3Rows = $(tab3).find("tr");
 	
 	for (var i = 0; i < tab3Rows.length; i++) {
 		if (i >= 1) {
 			var cells = $(tab3Rows[i]).find("td");
 			
 			if (i == 1) {
-				transgressives.masculineSingularPresentTransgressive = cells[1];
-				transgressives.masculineSingularPastTransgressive = cells[2];
+				transgressives.masculineSingularPresentTransgressive = $(cells[1]).text();
+				transgressives.masculineSingularPastTransgressive = $(cells[2]).text();
 			}
 			
 			if (i == 2) {
-				transgressives.feminineSingularPresentTransgressive = cells[1];
-				transgressives.feminineSingularPastTransgressive = cells[2];
-				transgressives.neuterSingularPresentTransgressive = cells[1];
-				transgressives.neuterSingularPastTransgressive = cells[2];
+				transgressives.feminineSingularPresentTransgressive = $(cells[1]).text();
+				transgressives.feminineSingularPastTransgressive = $(cells[2]).text();
+				transgressives.neuterSingularPresentTransgressive = $(cells[1]).text();
+				transgressives.neuterSingularPastTransgressive = $(cells[2]).text();
 			}
 			
 			if (i == 3) {
-				transgressives.pluralPresentTransgressive = cells[1];
-				transgressives.pluralPastTransgressive = cells[2];
+				transgressives.pluralPresentTransgressive = $(cells[1]).text();
+				transgressives.pluralPastTransgressive = $(cells[2]).text();
 			}
 			
 		}
 	}
+	
+	presentForms = _.mapValues(presentForms, function(d) {return _.replace(d, "\n", "")});
+	participles = _.mapValues(participles, function(d) {return _.replace(d, "\n", "")});
+	transgressives = _.mapValues(transgressives, function(d) {return _.replace(d, "\n", "")});
 	
 	var myJson = {...presentForms, ...participles, ...transgressives};
 	
@@ -181,7 +184,10 @@ for (var i = 0; i < myData.length; i++) {
 	
 	ret.push(verbObject);
 	
+	console.log(verbObject);
+	
 	} catch(e) {
+		console.log(e);
 		continue;
 	}
 }
