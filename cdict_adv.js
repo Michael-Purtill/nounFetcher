@@ -17,7 +17,7 @@ var $ = jQuery = require('jquery')(window);
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-const data = fs.readFileSync('./czechconjlinks.txt').toString();
+const data = fs.readFileSync('./czechadvlinks.txt').toString();
 
 // console.log(data);
 
@@ -35,19 +35,19 @@ for (var i = 0; i < myData.length	; i++) {
 	var body = myRes.getBody().toString('utf8');
 	var myHtml = $(body).find("#Czech");
 	var czechHTML = myHtml.parent().nextUntil("h2");
-	var wordType = "Conjunction";
+	var wordType = "Adverb";
 	
 	var fu = myData[i].split("/");
 	
 	var word = decodeURIComponent(fu[fu.length - 1].split("#")[0]);
 	
-	if (czechHTML.find("[id*='" + "Conjunction" + "']").val() != undefined) {
-			wordType = "Conjunction";
+	if (czechHTML.find("[id*='" + "Adverb" + "']").val() != undefined) {
+			wordType = "Adverb";
 	}
 	
 	var meanings = [];
 
-	var wordMeaningHTML = czechHTML.find("[id*='" + "Conjunction" + "']").parent().next().next();
+	var wordMeaningHTML = czechHTML.find("[id*='" + "Adverb" + "']").parent().next().next();
 	
 	for (var j = 0; j < wordMeaningHTML.length; j++) {
 		var meaningChildren = wordMeaningHTML[j].children;
@@ -72,4 +72,4 @@ for (var i = 0; i < myData.length	; i++) {
 
 console.log(ret);
 
-fs.writeFileSync("conjs.json", JSON.stringify(ret), 'utf8');
+fs.writeFileSync("advs.json", JSON.stringify(ret), 'utf8');
